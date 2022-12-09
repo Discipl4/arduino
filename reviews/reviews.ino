@@ -3,14 +3,14 @@
 #include <LiquidCrystal_I2C.h>
 #include <WiFi.h>
 
-String ssid = "Pak DELUCI";
-String passwd = "hallo123456";
+//String ssid = "Pak DELUCI";
+//String passwd = "hallo123456";
 
 //String ssid = "iPhone 8";
 //String passwd = "321123321";
 
-//String ssid = "Indah ";
-//String passwd = "aldo123456";
+String ssid = "Indah ";
+String passwd = "aldo123456";
 
 //String ssid = "UDINUS-H4";
 //String passwd = "";
@@ -20,7 +20,7 @@ HTTPClient http;
 //String url = "http://192.168.137.152:3000/api/v1/review/now";
 //String url = "http://172.20.10.2:3000/api/v1/review/now";
 //String url = "https://3000-fahmibahtia-arduinorevi-g19mj5r9ta1.ws-us77.gitpod.io/api/v1/review/now";
-String url = "http://192.168.169.251:3000/api/v1/review/now";
+String url = "http://192.168.1.7:3000/api/v1/review/now";
 
 void connectWifi();
 void postPuas();
@@ -305,7 +305,7 @@ int getPuas() {
   deserializeJson(doc, response);
   JsonObject root = doc.as<JsonObject>();
 
-  int reviews = root["reviews"][0]["puas"];
+  int reviews = root["puas"];
   
   return reviews;
   
@@ -322,7 +322,7 @@ int getBiasa() {
   deserializeJson(doc, response);
   JsonObject root = doc.as<JsonObject>();
 
-  int reviews = root["reviews"][0]["biasa"];
+  int reviews = root["biasa"];
   
   return reviews;
   
@@ -339,7 +339,7 @@ int getTidakPuas() {
   deserializeJson(doc, response);
   JsonObject root = doc.as<JsonObject>();
 
-  int reviews = root["reviews"][0]["tidakPuas"];
+  int reviews = root["tidakPuas"];
   
   return reviews;
   
